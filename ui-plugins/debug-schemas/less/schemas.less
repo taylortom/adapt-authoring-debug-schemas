@@ -2,7 +2,25 @@
 @import 'sharedStyles';
 
 body.module-debug {
-  .debug .view > .schemas {
-
+  .debug .view > .schemas > .inner {
+    display: flex;
+    .schemas-list {
+      padding: 20px;
+      min-width: 300px;
+      background-color: @tertiary-color;
+      border-right: 1px solid black;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: @white;
+          font-weight: @font-weight-bold;
+        }
+      }
+    }
+    .schema {
+      white-space: pre;
+      padding: 20px;
+    }
   }
 }
