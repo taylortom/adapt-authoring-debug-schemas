@@ -7,6 +7,7 @@ define(function(require){
     tagName: 'div',
     className: 'schemas',
     events: {
+      'click button.reload': 'reloadSchemas',
       'click .schemas-list a': 'fetchSchema'
     },
 
@@ -22,6 +23,15 @@ define(function(require){
       try {
         const schema = await $.get($(e.currentTarget).attr('href'));
         this.$('.schema').html(JSON.stringify(schema, null, 2));
+      } catch(e) {
+        console.log(e);
+      }
+    },
+
+    reloadSchemas: async function(e) {
+      e.preventDefault();
+      try {
+        await $.post('/api/schema/reload');
       } catch(e) {
         console.log(e);
       }
