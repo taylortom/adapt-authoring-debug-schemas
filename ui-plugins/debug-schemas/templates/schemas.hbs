@@ -1,13 +1,18 @@
 <div class="inner">
-  <div class="button-container">
-    <button class="action-primary reload">Reload schemas</button>
-  </div>
-  <div class="schemas-list">
-    <ul>
-      {{#each schemas}}
-        <li><a href="/api/schema/{{this}}">{{this}}</a></li>
-      {{/each}}
-    </ul>
+  <div class="schemas-list-container">
+      <div class="button-container">
+        <button class="action-primary reload">Reload schemas</button>
+      </div>
+      <div class="schemas-list">
+        <div class="schemas-list-inner">
+          <ul>
+            {{#each schemas}}
+              <li><a href="/api/schema/{{this}}">{{this}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   <pre class="schema"></pre>
 </div>
