@@ -32,6 +32,7 @@ define(function(require){
       e.preventDefault();
       try {
         await $.post('/api/schema/reload');
+        Origin.Notify.toast({ type: 'success', text: 'Schemas reloaded successfully' });
       } catch(e) {
         console.log(e);
       }
